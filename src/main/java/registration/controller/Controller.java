@@ -17,7 +17,7 @@ public class Controller {
     }
     // this method boots application
     public void applicationBoot() {
-        Scanner scannerInput = new Scanner(System.in, "windows-1251");
+        Scanner scannerInput = new Scanner(System.in);
         languagePack(scannerInput);
         View.localization(model.getLanguageCode());
         setInfo(
@@ -69,6 +69,7 @@ public class Controller {
             view.printMessage(view.mergeStrings(
             String.format(View.getResourceBundle().getString(globalConstants.INPUT_REQUEST) + " "),
             String.format(variable_request + "\n"),
+            String.format(View.getResourceBundle().getString(globalConstants.WARNING_WARNING)),
             String.format(variable_warning + " "),
             String.format(globalConstants.ARROWS)
         ));
